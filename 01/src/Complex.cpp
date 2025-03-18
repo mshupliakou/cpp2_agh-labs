@@ -32,3 +32,6 @@ Complex::operator double(){
     return sqrt((a*a)+(b*b));
 }
 
+double Complex::operator()(std::function<double(const Complex&)> f){
+    return f(*this);
+}

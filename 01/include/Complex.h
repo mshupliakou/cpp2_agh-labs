@@ -3,6 +3,7 @@
 #define COMPLEX_H
 #include <cmath>
 #include <cstring>
+#include <functional>
 
 ///@brief describes a class of complex numbers
 class Complex{
@@ -50,6 +51,9 @@ class Complex{
         answ+="i";
         return answ;
     }
+
+    double operator()(std::function<double(const Complex&)> f);
+    
 };
 std::ostream& operator <<(std::ostream& os, const Complex& complex);
 

@@ -4,6 +4,7 @@
 #include <cmath>
 #include <cstring>
 #include <functional>
+#include <string>
 
 ///@brief describes a class of complex numbers
 class Complex{

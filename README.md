@@ -20,7 +20,8 @@ The repository is organized by lessons or topics covered in the course:
 ## 📋 Topics Covered
 
 1. **Creating a class which describes complex numbers. Conversions** 
-1. **Overloading operator[]. Working with a huge amount of files** 
+2. **Overloading operator[]. Working with a huge amount of files** 
+3. **Using of std::function. Overloading +=, () operators** 
 
 
 ## 🚀 How to Run the Code

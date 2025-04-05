@@ -48,6 +48,27 @@ void Team::printPokemonsBackward() const {
         current = current->prev;
     }
 }
+Team& Team::operator=(const Team& other) {
+    if (this == &other) return *this;
+
+    PokemonNode* current = m_head;
+    while (current) {
+        PokemonNode* next = current->next;
+        delete current;
+        current = next;
+    }
+    m_head = m_tail = nullptr;
+
+    m_name = other.m_name;
+
+    PokemonNode* other_current = other.m_head;
+    while (other_current) {
+        this->addPokemon(other_current->data); 
+        other_current = other_current->next;
+    }
+
+    return *this;
+}
 
 Pokemon Team::operator[](int index){
     int i=0;

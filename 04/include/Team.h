@@ -19,6 +19,18 @@ class Team {
 
 public:
     /**
+     * @brief Copy assignment operator.
+     * 
+     * This operator is used to assign one team to another, performing a deep copy of the team's name and Pokémon list.
+     * If the team is already assigned to the same object (self-assignment), it does nothing.
+     * It cleans up the current team's data and copies the content of the other team.
+     *
+     * @param other The other team to be assigned.
+     * @return The reference to the current team after assignment.
+     */
+    Team& operator=(const Team& other);
+
+    /**
      * @brief Constructor for the team.
      * 
      * Initializes the team's name and sets the first and last pointers of the list to nullptr.
@@ -26,6 +38,15 @@ public:
      * @param m_name The name of the team.
      */
     Team(std::string m_name):m_name(m_name), m_head(nullptr), m_tail(nullptr){}
+
+    /**
+     * @brief Constructor for the team.
+     * 
+     * Initializes the team's name and sets the first and last pointers of the list to nullptr.
+     * 
+     * @param m_name The name of the team.
+     */
+    Team(const char* m_name):m_name(m_name), m_head(nullptr), m_tail(nullptr){}
 
     /**
      * @brief Adds a Pokémon to the team.
@@ -83,6 +104,18 @@ public:
      * @return The name of the team.
      */
     std::string getName() const;
+
+    /**
+     * @brief Gets the head pointer to the Pokémon list.
+     * 
+     * This method is useful to access the first node in the Pokémon list, 
+     * allowing traversal or manipulation of the list.
+     * 
+     * @return Pointer to the first Pokémon node.
+     */
+    PokemonNode* getHead(){
+        return m_head;
+    }
 };
 
 #endif

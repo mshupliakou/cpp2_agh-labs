@@ -56,7 +56,7 @@ public:
      * 
      * @param team The Pokémon team to be added.
      */
-    void addTeam(Team& team);
+    void addTeam(const Team& team);
 
     /**
      * @brief Prints all the teams of the trainer.
@@ -71,6 +71,63 @@ public:
      * Frees the memory by deleting all the team nodes.
      */
     ~Trainer();  
+
+    /**
+     * @brief Indexing operator.
+     * 
+     * This operator provides access to a Pokémon team by name. If no team with the given name is found, it throws an exception.
+     * 
+     * @param name The name of the Pokémon team.
+     * @return The Pokémon team with the given name.
+     */
+    Team& operator[](std::string name) const;
+    
+    /**
+     * @brief Non-const indexing operator.
+     * 
+     * Provides access to a Pokémon team by name for modification. If no team with the given name is found, it throws an exception.
+     * 
+     * @param name The name of the Pokémon team.
+     * @return The Pokémon team with the given name.
+     */
+    Team& operator[](std::string name);
+
+    /**
+     * @brief Prints information about teams with no Pokémon.
+     * 
+     * This function iterates through the list of teams and prints the names of teams that have no Pokémon.
+     */
+    void printEmptyTeams() const;
+
+    /**
+     * @brief Copy assignment operator.
+     * 
+     * This operator is used to assign one trainer to another. It performs a deep copy of the trainer's teams.
+     * If the trainer is already assigned to the same object (self-assignment), it does nothing.
+     * 
+     * @param other The other trainer to be assigned.
+     * @return The reference to the current trainer after assignment.
+     */
+    Trainer& operator=(const Trainer& other);
+
+    /**
+     * @brief Friend function to output the Trainer object.
+     * 
+     * This function allows printing the trainer's information using an `ostream`. It prints the trainer's name and all the teams associated with the trainer.
+     * 
+     * @param os The output stream to print to.
+     * @param tr The trainer whose information is to be printed.
+     * @return The output stream with the trainer's information.
+     */
+    friend std::ostream& operator<<(std::ostream& os, Trainer& tr){
+        os << "Trainer " << tr.m_name << " teams:" << std::endl; 
+        TeamNode* current = tr.m_head;
+        while (current) {
+            std::cout << "- " << current->data.getName() << std::endl;
+            current = current->next;
+        }
+        return os;
+    }
 };
 
 #endif

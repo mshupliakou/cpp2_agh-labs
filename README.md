@@ -22,6 +22,7 @@ The repository is organized by lessons or topics covered in the course:
 1. **Creating a class which describes complex numbers. Conversions** 
 2. **Overloading operator[]. Working with a huge amount of files** 
 3. **Using of std::function. Overloading +=, () operators** 
+4. **Huge code. Operators =. Copy operators. Linked Lists. Overloading []operator** 
 
 
 ## 🚀 How to Run the Code

@@ -23,6 +23,7 @@ The repository is organized by lessons or topics covered in the course:
 2. **Overloading operator[]. Working with a huge amount of files** 
 3. **Using of std::function. Overloading +=, () operators** 
 4. **Huge code. Operators =. Copy operators. Linked Lists. Overloading []operator** 
+5. **Using std::unique_ptr** 
 
 
 ## 🚀 How to Run the Code

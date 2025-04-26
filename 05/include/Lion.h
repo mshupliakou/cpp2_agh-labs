@@ -18,6 +18,12 @@ class Lion: public Animal{
         return std::make_unique<Lion>(*this);
     }
 
+    std::string getType() const{
+        return "Lion";
+    }
+    std::string getName() const{
+        return name;
+    }
 };
 
 #endif

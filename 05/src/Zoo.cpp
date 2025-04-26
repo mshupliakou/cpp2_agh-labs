@@ -15,13 +15,17 @@
     }
 
     Zoo::Zoo(const Zoo& other){
+    if(&other != this)
         for(const  std::unique_ptr<Animal>& a: other.animals){
+            if(a)
             animals.push_back(a->clone());
         }
     }
 
     Zoo Zoo::operator=(const Zoo& other){
-    for(const  std::unique_ptr<Animal>& a: other.animals){
+    if(&other != this)
+    for(const std::unique_ptr<Animal>& a: other.animals){
+        if(a)
             animals.push_back(a->clone());
         }
         return *this;
@@ -38,4 +42,20 @@
 
     Zoo::    ~Zoo(){
         std::cout<<"Zoo was destroyed"<<std::endl;
+    }
+
+
+    void Zoo::makeAllSounds()const{
+        if(animals.empty()){
+            std::cout<<"Zoo is empty!"<<std::endl;
+        }
+        for(const std::unique_ptr<Animal>& a: animals){
+            if(a)
+            std::cout<<a->getSound()<<std::endl;
+        }
+    }
+
+    std::unique_ptr<Animal> Zoo::releaseAnimal(int number){
+        std::unique_ptr<Animal> a = std::move(animals[number]);
+        return a;
     }

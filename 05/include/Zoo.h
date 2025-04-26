@@ -35,6 +35,15 @@ class Zoo{
     /// @brief moving operator =
     Zoo& operator =( Zoo&& other) noexcept;
 
+
+    /// @brief function which is needed to display all the animals and their sounds
+    void makeAllSounds()const;
+
+    /// @brief releasing animal
+    /// @param number the number of an animal we would like to release
+    /// @return std::unique_ptr<Animal> released_animal
+    std::unique_ptr<Animal> releaseAnimal(int number);
+
     //destructor
     ~Zoo();
 

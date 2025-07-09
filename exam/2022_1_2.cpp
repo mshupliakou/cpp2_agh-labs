@@ -18,39 +18,43 @@ wszędzie tam gdzie jest to moliwe i uzasadnione. Prosze podać naprostszą mozl
 template< typename Iter, typename Fun>
 void print_to_if(std::ostream& os, Iter first, Iter last, Fun f){
 	while(first!=last){//przechodzimy po iteratorach 
-		if(f(*first))
+		if(f(*first)) //jeżeli funckcja funktor zwróci true to element zostanie wypisany
 			os<<(*first)<<",";
 		first++;
 	}
 	os<<std::endl;
 }
 
+//funkcja która prowadzi zmiany na elementach
 template<typename Iter, typename Fun>
 void change(Iter first, Iter last, Fun f){
     while(first!=last){
-	f(*first);
-	first++;
+		f(*first); //wyłowanie funkcji która zmienia element
+		first++;
 	}
 }
 
+//funkcja która zawsze zwraca prawdę(można wypisać wszystkie elementy)
 bool f1(int smth){
 	return true;
 }
 
+//funkcja wykrywa elementy parzyste
 bool f2(int smth){
 	if(smth%2==0)return true;
 	else return false;
 }
 
+//funktor. pozwala zmienić element. 
 template<typename T=int>
 class f3{
-T a;
-public:
-f3(T a):a(a){}
-void operator()(T& val){
-	val+=a;
-}
-
+	T a;
+	public:
+	f3(T a):a(a){} // przez konstruktor ustawiamy znaczenie dla a
+	//przeładowanie operatora ()
+	void operator()(T& val){
+		val+=a; //funktor dodaje a do elementu
+	}
 };
 
 

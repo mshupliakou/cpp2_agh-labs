@@ -32,6 +32,7 @@ The repository is organized by lessons or topics covered in the course:
 11. -
 12. **Template Function. Specialization**
 13. **Template Function. Specialization**
+14. **Template Class. Creating own std::vector**
 
 
 ## 🚀 How to Run the Code

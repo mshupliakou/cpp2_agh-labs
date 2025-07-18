@@ -25,12 +25,13 @@ The repository is organized by lessons or topics covered in the course:
 4. **Huge code. Operators =. Copy operators. Linked Lists. Overloading []operator**
 5. PROJECT
 6. **Using std::unique_ptr**
-7. **Using std::unique_ptr** 
+7. **Continuing the 6th lab** 
 8.  -
 9. -
 10. -
 11. -
 12. **Template Function. Specialization**
+13. **Template Function. Specialization**
 
 
 ## 🚀 How to Run the Code

@@ -27,7 +27,7 @@ The repository is organized by lessons or topics covered in the course:
 6. **Using std::unique_ptr**
 7. **Continuing the 6th lab** 
 8.  -
-9. -
+9. **File System. Solving diamond problem** 
 10. -
 11. -
 12. **Template Function. Specialization**
